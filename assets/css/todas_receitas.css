@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff9f5;
+    color: #333;
+}
+
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.busca {
+    flex-grow: 1;
+    margin: 0 20px;
+    display: flex;
+}
+
+.busca input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.busca button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #a0522d;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.login {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.login i {
+    margin-right: 5px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #fbe9e7;
+    padding: 10px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #a0522d;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background-color: #ffe0b2;
+}
+
+.receitas {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.receitas h1 {
+    font-size: 2.2em;
+    color: #a0522d;
+    margin-bottom: 30px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 250px;
+    padding: 15px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card a {
+    text-decoration: none;
+    color: #a0522d;
+    font-weight: bold;
+}

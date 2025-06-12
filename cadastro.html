@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro - AESA Receitas</title>
+    <link rel="stylesheet" href="assets/css/todas_receitas.css">
+    <script src="https://kit.fontawesome.com/a2d9a66dfb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="topo">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Logo AESA Receitas">
+            </a>
+            <div class="busca">
+                <input type="text" placeholder="Busque sua receita...">
+                <button><i class="fas fa-search"></i> Procurar</button>
+            </div>
+            <a href="login.php" class="login">
+                <i class="fas fa-user"></i> <span>Login</span>
+            </a>
+        </div>
+        <nav class="menu">
+            <a href="todas_receitas.html">Todas as Receitas</a>
+            <a href="bolos_tortas.html">Bolos e Tortas</a>
+            <a href="massas.html">Massas</a>
+            <a href="bebidas.html">Bebidas</a>
+            <a href="doces_sobremesas.html">Doces e Sobremesas</a>
+            <a href="lanches.html">Lanches</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h2>Crie sua conta</h2>
+            <form id="formCadastro" action="processa_cadastro.php" method="POST" onsubmit="return validarCadastro()">
+                <input type="text" name="nome" id="nome" placeholder="Nome completo" required>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+                <input type="tel" name="telefone" id="telefone" placeholder="Telefone" required>
+                <input type="password" name="senha" id="senha" placeholder="Senha" required>
+                <input type="password" id="confirmarSenha" placeholder="Confirmar senha" required>
+                <button type="submit">Cadastrar</button>
+                <p id="mensagemErro" style="color:red;"></p>
+                <p>Já tem uma conta? <a href="login.php">Entrar</a></p>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function validarCadastro() {
+            const email = document.getElementById('email').value.trim();
+            const telefone = document.getElementById('telefone').value.trim();
+            const senha = document.getElementById('senha').value;
+            const confirmar = document.getElementById('confirmarSenha').value;
+            const mensagem = document.getElementById('mensagemErro');
+
+            mensagem.textContent = "";
+
+            // Validações simples
+            if (!email.includes('@') || !email.includes('.')) {
+                mensagem.textContent = "Informe um e-mail válido.";
+                return false;
+            }
+
+            if (!/^\d{8,15}$/.test(telefone.replace(/\D/g, ''))) {
+                mensagem.textContent = "Informe um telefone válido (somente números, 8 a 15 dígitos).";
+                return false;
+            }
+
+            if (senha.length < 6) {
+                mensagem.textContent = "A senha deve ter no mínimo 6 caracteres.";
+                return false;
+            }
+
+            if (senha !== confirmar) {
+                mensagem.textContent = "As senhas não coincidem.";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

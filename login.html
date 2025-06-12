@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - AESA Receitas</title>
+  <link rel="stylesheet" href="assets/css/login.css" />
+  <script src="https://kit.fontawesome.com/a2d9a66dfb.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #1a1a2e, #16213e);
+      height: 100vh;
+      color: #fff;
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 120px);
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 20px;
+      padding: 40px 30px;
+      width: 350px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .login-box .avatar {
+      width: 100px;
+      height: 100px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .login-box .avatar i {
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .login-box form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .login-box input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+      color: #fff;
+      outline: none;
+    }
+
+    .login-box input::placeholder {
+      color: #ccc;
+    }
+
+    .login-box .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+
+    .login-box .options label {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .login-box button {
+      background: linear-gradient(90deg, #4b006e, #4e44f5);
+      border: none;
+      padding: 12px;
+      border-radius: 30px;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .login-box button:hover {
+      opacity: 0.9;
+    }
+
+    .login-box .register-link {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    .login-box .register-link a {
+      color: #8ab4f8;
+      text-decoration: none;
+    }
+
+    .login-box .register-link a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.busca {
+    flex-grow: 1;
+    margin: 0 20px;
+    display: flex;
+}
+
+.busca input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+}
+
+.busca button {
+    padding: 8px 15px;
+    border: none;
+    background-color: #a0522d;
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.login {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.login i {
+    margin-right: 5px;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    background-color: #fbe9e7;
+    padding: 10px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #a0522d;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background-color: #ffe0b2;
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="topo">
+      <a href="index.html" class="logo">
+        <img src="assets/img/logo.png" alt="Logo AESA Receitas" />
+      </a>
+      <div class="busca">
+        <input type="text" placeholder="Busque sua receita..." />
+        <button><i class="fas fa-search"></i> Procurar</button>
+      </div>
+      <a href="login.php" class="login">
+        <i class="fas fa-user"></i> <span>Login</span>
+      </a>
+    </div>
+    <nav class="menu">
+      <a href="todas_receitas.html">Todas as Receitas</a>
+      <a href="bolos_tortas.html">Bolos e Tortas</a>
+      <a href="massas.html">Massas</a>
+      <a href="bebidas.html">Bebidas</a>
+      <a href="doces_sobremesas.html">Doces e Sobremesas</a>
+      <a href="lanches.html">Lanches</a>
+    </nav>
+  </header>
+
+  <div class="login-container">
+    <div class="login-box">
+      <div class="avatar">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <form action="processa_login.php" method="POST">
+        <input type="text" name="email_telefone" placeholder="Email ou Telefone" required />
+        <input type="password" name="senha" placeholder="Senha" required />
+
+        <div class="options">
+          <label><input type="checkbox" name="lembrar" /> Lembrar-me</label>
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+
+        <button type="submit">LOGIN</button>
+      </form>
+      <div class="register-link">
+        Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

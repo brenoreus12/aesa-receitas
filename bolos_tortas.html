@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolos e Tortas - AESA Receitas</title>
+    <link rel="stylesheet" href="assets/css/todas_receitas.css">
+    <script src="https://kit.fontawesome.com/a2d9a66dfb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="topo">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.png" alt="Logo AESA Receitas">
+            </a>
+            <div class="busca">
+                <input type="text" placeholder="Busque sua receita...">
+                <button><i class="fas fa-search"></i> Procurar</button>
+            </div>
+            <a href="login.php" class="login">
+                <i class="fas fa-user"></i> <span>Login</span>
+            </a>
+        </div>
+        <nav class="menu">
+            <a href="todas_receitas.html">Todas as Receitas</a>
+            <a href="bolos_tortas.html">Bolos e Tortas</a>
+            <a href="massas.html">Massas</a>
+            <a href="bebidas.html">Bebidas</a>
+            <a href="doces_sobremesas.html">Doces e Sobremesas</a>
+            <a href="lanches.html">Lanches</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="receitas">
+            <h1>Bolos e Tortas</h1>
+            <div class="card-container">
+
+                <div class="card">
+                    <img src="assets/img/bolo-cenoura.jpg" alt="Bolo de Cenoura">
+                    <h3>Bolo de Cenoura</h3>
+                    <button class="toggle-receita" onclick="toggleReceita(this)">Veja a receita <i class="fas fa-plus-circle"></i></button>
+                    <div class="detalhes-receita" style="display: none;">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>3 cenouras médias picadas</li>
+                            <li>4 ovos</li>
+                            <li>1 xícara de óleo</li>
+                            <li>2 xícaras de açúcar</li>
+                            <li>2 ½ xícaras de farinha de trigo</li>
+                            <li>1 colher de sopa de fermento em pó</li>
+                        </ul>
+                        <h4>Modo de Preparo:</h4>
+                        <p>
+                            Bata no liquidificador as cenouras, ovos e óleo. Depois adicione o açúcar e bata mais um pouco. 
+                            Transfira para uma tigela, misture a farinha e por último o fermento. 
+                            Asse em forno pré-aquecido a 180°C por cerca de 40 minutos.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="assets/img/torta.jpg" alt="Torta de Frango">
+                    <h3>Torta de Frango</h3>
+                    <button class="toggle-receita" onclick="toggleReceita(this)">Veja a receita <i class="fas fa-plus-circle"></i></button>
+                    <div class="detalhes-receita" style="display: none;">
+                        <h4>Ingredientes:</h4>
+                        <ul>
+                            <li>2 xícaras de leite</li>
+                            <li>2 ovos</li>
+                            <li>1/2 xícara de óleo</li>
+                            <li>1 colher de sopa de fermento</li>
+                            <li>2 xícaras de farinha de trigo</li>
+                            <li>Recheio: frango desfiado, milho, ervilha, tomate e temperos</li>
+                        </ul>
+                        <h4>Modo de Preparo:</h4>
+                        <p>
+                            Bata os ingredientes da massa no liquidificador. Despeje metade em forma untada, adicione o recheio e cubra com o restante da massa. 
+                            Leve ao forno médio (180°C) por cerca de 35 minutos ou até dourar.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleReceita(botao) {
+            const detalhes = botao.nextElementSibling;
+            const visivel = detalhes.style.display === 'block';
+            detalhes.style.display = visivel ? 'none' : 'block';
+            botao.innerHTML = visivel 
+                ? 'Veja a receita <i class="fas fa-plus-circle"></i>' 
+                : 'Ocultar receita <i class="fas fa-minus-circle"></i>';
+        }
+    </script>
+</body>
+</html>
